@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- favicon  -->
+    <link
+      rel="shortcut icon"
+      href="./congragulation2.gif"
+      type="image/x-icon"
+    />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-start">
+        <h2 id="quiz-title">
+          আপনি যদি কুইজ শুরু করতে চান,
+          <span class="text-primary">স্টার্ট কুইজ</span> বাটন এ গুঁতা মারেন...
+        </h2>
+        <button id="startQuiz" class="btn btn-primary shadow-sm btn-lg">
+          স্টার্ট কুইজ
+        </button>
+      </div>
+
+      <!-- question set  -->
+      <div class="question" id="question">
+        <div class="card shadow">
+          <div class="card-header bg-dark text-center text-light">
+            <h2 class="fs-1 fw-bold">কুইজ</h2>
+          </div>
+          <div class="card-body">
+            <div id="questionsSetion"></div>
+            <div class="buttons text-end">
+              <button class="btn btn-danger me-auto" id="quit">
+                আমি কুইজ দিমু না
+              </button>
+              <button id="next" class="btn btn-primary ms-3">
+                পরের প্রশ্ন ...
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /// result section \\\ -->
+
+    <div class="container">
+      <div class="card text-center w-50 mx-auto shadow p-4" id="result">
+        <img class="w-50 mx-auto mb-4 pt-3" src="./congragulation.gif" alt="" />
+        <h2 class="fw-bold text-success">অভিনন্দন আপনাকে !!</h2>
+        <p class="lead">আপনি ১০ টি সঠিক উত্তর দিয়েছেন ।</p>
+        <button class="btn btn-danger text-light mt-4" id="replay">
+          মজা পাইছি, আবার খেলব
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
