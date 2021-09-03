@@ -56,9 +56,22 @@
 
     <div class="container">
       <div class="card text-center w-50 mx-auto shadow p-4" id="result">
-        <img class="w-50 mx-auto mb-4 pt-3" src="./congragulation.gif" alt="" />
-        <h2 class="fw-bold text-success">অভিনন্দন আপনাকে !!</h2>
-        <p class="lead">আপনি ১০ টি সঠিক উত্তর দিয়েছেন ।</p>
+        <img
+          id="scoreimo"
+          class="w-50 mx-auto mb-4 pt-3"
+          src="./congragulation.gif"
+          alt=""
+        />
+        <h2
+          class="fw-bold text-success"
+          id="scoreTitle"
+          style="margin-bottom: 20px"
+        ></h2>
+        <p class="lead">
+          You have given
+          <span id="totalScore" style="font-weight: bold"></span> correct
+          answer.
+        </p>
         <button class="btn btn-danger text-light mt-4" id="replay">
           মজা পাইছি, আবার খেলব
         </button>

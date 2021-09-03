@@ -2,6 +2,7 @@
 
 document.getElementById("replay").addEventListener("click", () => {
   document.getElementById("result").style.display = "none";
+  totalMarks = 0;
 });
 
 document.getElementById("startQuiz").addEventListener("click", () => {
@@ -12,6 +13,7 @@ document.getElementById("startQuiz").addEventListener("click", () => {
 
 let index = 0;
 document.getElementById("next").addEventListener("click", () => {
+  totalScore(totalMarks);
   let questionLength = questions.length;
 
   if (index < questionLength - 1) {
@@ -60,7 +62,6 @@ let getAns = (ans, index) => {
     totalMarks += 1;
     ans.classList.add("bg-success");
     ans.classList.add("text-light");
-    console.log(totalMarks);
   } else {
     ans.classList.add("bg-danger");
     ans.classList.add("text-light");
@@ -73,6 +74,26 @@ let getAns = (ans, index) => {
     }
   }
 };
+
+// Final Score
+
+let totalScore = totalMarks => {
+  document.getElementById("totalScore").innerText = totalMarks;
+
+  if (totalMarks >= 0 && totalMarks <= 6) {
+    document
+      .getElementById("scoreimo")
+      .setAttribute("src", "../congragulation2.gif");
+    document.getElementById("scoreTitle").innerText =
+      "ফেইসবুক ফালাইয়া পড়তে বসেন !!";
+  } else if (totalMarks >= 7 && totalMarks === 10) {
+    document
+      .getElementById("scoreimo")
+      .setAttribute("src", "../congragulation.gif");
+    document.getElementById("scoreTitle").innerText = "অভিনন্দন আপনাকে !!";
+  }
+};
+
 document.getElementById("quit").addEventListener("click", () => {
   window.location.href = "index.html";
 });
