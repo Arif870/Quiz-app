@@ -24,7 +24,7 @@ document.getElementById("next").addEventListener("click", () => {
   }
 });
 function quizQuestion(index) {
-  return (document.getElementById(
+  let queSec = (document.getElementById(
     "questionsSetion"
   ).innerHTML = `<h2 class= 'my-4'>${questions[index].id}. ${questions[index].question}</h2>
               <ul>
@@ -33,7 +33,46 @@ function quizQuestion(index) {
                 <li>${questions[index].options[2]}</li>
                 <li>${questions[index].options[3]}</li>
               </ul>`);
+
+  let opts = document.querySelectorAll("ul li");
+  for (let i = 0; i < opts.length; i++) {
+    opts[i].setAttribute("onclick", "getAns(this, index)");
+  }
+
+  return queSec;
 }
+
+// check given ans
+
+let totalMarks = 0;
+
+let getAns = (ans, index) => {
+  // pointer event validation
+  let opts = document.querySelectorAll("ul li");
+
+  for (let i = 0; i < opts.length; i++) {
+    opts[i].classList.add("checked");
+  }
+
+  let givenAns = ans.innerText;
+  let correctAns = questions[index].answer;
+  if (givenAns === correctAns) {
+    totalMarks += 1;
+    ans.classList.add("bg-success");
+    ans.classList.add("text-light");
+    console.log(totalMarks);
+  } else {
+    ans.classList.add("bg-danger");
+    ans.classList.add("text-light");
+
+    for (let i = 0; i < opts.length; i++) {
+      if (opts[i].innerText === correctAns) {
+        opts[i].classList.add("bg-success");
+        opts[i].classList.add("text-light");
+      }
+    }
+  }
+};
 document.getElementById("quit").addEventListener("click", () => {
   window.location.href = "index.html";
 });

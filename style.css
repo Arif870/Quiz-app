@@ -43,6 +43,7 @@ li:hover {
   transform: translate(-50%, -50%);
   width: 60%;
   display: none;
+  user-select: none;
 }
 .question h2 {
   font-weight: 600;
@@ -54,4 +55,8 @@ li:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+}
+
+.checked {
+  pointer-events: none;
 }
