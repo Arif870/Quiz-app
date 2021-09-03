@@ -86,7 +86,7 @@ let totalScore = totalMarks => {
       .setAttribute("src", "../congragulation2.gif");
     document.getElementById("scoreTitle").innerText =
       "ফেইসবুক ফালাইয়া পড়তে বসেন !!";
-  } else if (totalMarks >= 7 && totalMarks === 10) {
+  } else if (totalMarks >= 7) {
     document
       .getElementById("scoreimo")
       .setAttribute("src", "../congragulation.gif");
